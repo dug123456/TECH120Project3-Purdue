@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 WINDOW_NAME = "Vehicle Communication Display"
-WIDTH, HEIGHT = 1000, 1000
+WIDTH, HEIGHT = 1500, 1000
 BG_COLOR = (255, 255, 255)
 TEXT_COLOR = (0, 0, 0)
 FONT = cv2.FONT_HERSHEY_SIMPLEX
@@ -19,11 +19,11 @@ def mouse_callback(event, x, y, flags, param):
     elif event == cv2.EVENT_MBUTTONDOWN:
         state["text"] = f"Emergency ahead."
     elif event == cv2.EVENT_LBUTTONDBLCLK:
-        state["text"] = f""
+        state["text"] = f"My bad."
     elif event == cv2.EVENT_RBUTTONDBLCLK:
-        state["text"] = f""
+        state["text"] = f"[No message displayed]"
     elif event == cv2.EVENT_MBUTTONDBLCLK:
-        state["text"] = f""
+        state["text"] = f"Malfunction with vehicle."
 
 def draw_frame():
     img = np.full((HEIGHT, WIDTH, 3), BG_COLOR, dtype=np.uint8)
