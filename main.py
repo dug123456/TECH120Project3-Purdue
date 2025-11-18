@@ -19,16 +19,16 @@ def mouse_callback(event, x, y, flags, param):
     elif event == cv2.EVENT_MBUTTONDOWN:
         state["text"] = f"Emergency ahead."
     elif event == cv2.EVENT_LBUTTONDBLCLK:
-        state["text"] = f"My bad."
+        state["text"] = f"My mistake."
     elif event == cv2.EVENT_RBUTTONDBLCLK:
         state["text"] = f"[No message displayed]"
     elif event == cv2.EVENT_MBUTTONDBLCLK:
-        state["text"] = f"Malfunction with vehicle."
+        state["text"] = f"Personal/Vehicle emergency."
 
 def draw_frame():
     img = np.full((HEIGHT, WIDTH, 3), BG_COLOR, dtype=np.uint8)
     # draw instructions and current state
-    cv2.putText(img, state["text"], (200, 500), FONT, 2.5, (50, 50, 200), 2, cv2.LINE_AA)
+    cv2.putText(img, state["text"], (200, 500), FONT, 2.5, (0, 0, 0), 2, cv2.LINE_AA)
     return img
 
 def main():
